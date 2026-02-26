@@ -8,8 +8,19 @@ We consider a one-shot interaction between three types of agents:
 - **Lender**: applies a threshold rule \(t\) to reported scores. Loans to good borrowers yield positive expected profit \(\pi^G > 0\); loans to bad borrowers yield negative expected profit \(\pi^B < 0\).
 - **Regulator**: penalizes the lender according to the number of good borrowers who are denied credit. The penalty weight \(\lambda\) captures the strength of regulation.
 
-## Repository structure
+## Project Structure
 
----
-
-## Requirements
+```text
+project/
+├── env/
+│   ├── __init__.py
+│   ├── borrower.py        # Borrower agent class
+│   └── environment.py     # Strategic lending environment
+│
+├── util/
+│   ├── sweep_params.py    # Meta-sweep over parameter regimes
+│   └── metaruns.csv       # Stored results of parameter sweeps
+│
+├── plots.ipynb            # Notebook to generate figures
+└── experiment.py          # Run simulation for a single regime (λ-sweep)
+```
